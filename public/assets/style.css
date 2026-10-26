@@ -1,0 +1,335 @@
+/* ============================================================
+   DIABETES AI ANALYZER - DARK NAVY & TEAL DESIGN SYSTEM
+   Modern, Sleek, Professional UI for Machine Learning Healthcare
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #0A192F;
+  --bg-secondary: #112240;
+  --bg-tertiary: #1B3054;
+  --bg-card: rgba(17, 34, 64, 0.75);
+  --teal-primary: #14B8A6;
+  --teal-hover: #0D9488;
+  --teal-light: #5EEAD4;
+  --teal-glow: rgba(20, 184, 166, 0.25);
+  --cyan-accent: #06B6D4;
+  --text-main: #F1F5F9;
+  --text-muted: #94A3B8;
+  --text-dim: #64748B;
+  --border-color: rgba(20, 184, 166, 0.2);
+  --border-focus: rgba(20, 184, 166, 0.5);
+  --danger-bg: rgba(239, 68, 68, 0.15);
+  --danger-border: rgba(239, 68, 68, 0.4);
+  --danger-text: #F87171;
+  --success-bg: rgba(16, 185, 129, 0.15);
+  --success-border: rgba(16, 185, 129, 0.4);
+  --success-text: #34D399;
+  --warning-bg: rgba(245, 158, 11, 0.15);
+  --warning-border: rgba(245, 158, 11, 0.4);
+  --warning-text: #FBBF24;
+}
+
+/* Global Font & Body */
+html, body, [class*="css"] {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-primary);
+}
+
+/* Hero Section */
+.hero-container {
+  background: linear-gradient(135deg, rgba(17, 34, 64, 0.9) 0%, rgba(10, 25, 47, 0.95) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, var(--teal-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #FFFFFF 30%, #5EEAD4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 800px;
+  margin-bottom: 1.5rem;
+}
+
+/* Custom Card Component */
+.analyzer-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 20px -2px rgba(2, 12, 27, 0.5);
+  transition: all 0.3s ease;
+}
+
+.analyzer-card:hover {
+  border-color: rgba(20, 184, 166, 0.4);
+  box-shadow: 0 8px 25px -4px rgba(20, 184, 166, 0.15);
+  transform: translateY(-2px);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.card-description {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Metric Display Cards */
+.metric-box {
+  background: linear-gradient(145deg, rgba(17, 34, 64, 0.8) 0%, rgba(27, 48, 84, 0.5) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(2, 12, 27, 0.4);
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.metric-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--teal-light);
+  font-feature-settings: "tnum";
+}
+
+.metric-sub {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-top: 0.3rem;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-align: center;
+}
+
+.badge-risk-high {
+  background-color: var(--danger-bg);
+  border: 1px solid var(--danger-border);
+  color: var(--danger-text);
+}
+
+.badge-risk-low {
+  background-color: var(--success-bg);
+  border: 1px solid var(--success-border);
+  color: var(--success-text);
+}
+
+.badge-info {
+  background-color: rgba(6, 182, 212, 0.15);
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  color: #38BDF8;
+}
+
+/* Prediction Result Cards */
+.result-high-risk {
+  background: linear-gradient(135deg, rgba(45, 17, 24, 0.8) 0%, rgba(27, 10, 15, 0.9) 100%);
+  border: 2px solid var(--danger-border);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px -5px rgba(239, 68, 68, 0.2);
+}
+
+.result-low-risk {
+  background: linear-gradient(135deg, rgba(13, 38, 38, 0.8) 0%, rgba(8, 26, 26, 0.9) 100%);
+  border: 2px solid var(--success-border);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.2);
+}
+
+/* Medical Disclaimer Box */
+.medical-disclaimer {
+  background: rgba(245, 158, 11, 0.08);
+  border-left: 4px solid #F59E0B;
+  border-radius: 0 10px 10px 0;
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  color: #FDE68A;
+  line-height: 1.5;
+}
+
+/* Step / Process Wizard Badge */
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--teal-primary);
+  color: #0A192F;
+  font-weight: 700;
+  border-radius: 50%;
+  margin-right: 0.6rem;
+}
+
+/* Sidebar Custom Styling */
+section[data-testid="stSidebar"] {
+  background-color: #081426 !important;
+  border-right: 1px solid rgba(20, 184, 166, 0.15) !important;
+}
+
+section[data-testid="stSidebar"] .stSelectbox label {
+  color: var(--teal-light) !important;
+  font-weight: 600;
+}
+
+/* Buttons */
+.stButton > button {
+  background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-hover) 100%) !important;
+  color: #0A192F !important;
+  font-weight: 700 !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 0.65rem 1.4rem !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 15px rgba(20, 184, 166, 0.3) !important;
+}
+
+.stButton > button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(20, 184, 166, 0.5) !important;
+  color: #031321 !important;
+}
+
+/* Secondary Button */
+.stButton > button[kind="secondary"],
+.stButton > button[data-testid="baseButton-secondary"] {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-main) !important;
+  box-shadow: none !important;
+}
+
+.stButton > button[kind="secondary"]:hover,
+.stButton > button[data-testid="baseButton-secondary"]:hover {
+  background: rgba(20, 184, 166, 0.1) !important;
+  border-color: var(--teal-primary) !important;
+  color: var(--teal-light) !important;
+}
+
+/* Input Fields & Select Boxes */
+input, select, textarea, div[data-baseweb="select"] {
+  border-radius: 8px !important;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+  gap: 8px;
+  background-color: rgba(17, 34, 64, 0.5);
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.stTabs [data-baseweb="tab"] {
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-weight: 600;
+  padding: 8px 16px;
+}
+
+.stTabs [aria-selected="true"] {
+  background-color: var(--teal-primary) !important;
+  color: #0A192F !important;
+}
+
+/* Streamlit Alert overrides */
+.stAlert {
+  border-radius: 10px !important;
+  border-width: 1px !important;
+}
+
+/* Custom Table */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.custom-table th {
+  background: rgba(20, 184, 166, 0.15);
+  color: var(--teal-light);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 2px solid var(--teal-primary);
+  font-weight: 600;
+}
+
+.custom-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  color: var(--text-main);
+}
+
+.custom-table tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .hero-container {
+    padding: 1.5rem 1rem;
+  }
+  .metric-value {
+    font-size: 1.4rem;
+  }
+}

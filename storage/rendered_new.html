@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="csrf-token" content="NI3iY23sGNlB8IRk0VjX9Nf8n2Xo21OatG6R50Po">
+  <title>Cegah Diabetes - Uji Coba | Kebiasaan Sehat Baru</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kd: {
+              green: '#00a870',
+              greenDark: '#008f5d',
+              greenLight: '#e6f7f1',
+              blue: '#0085d0',
+              navy: '#1b3b5f',
+              text: '#2d3748',
+              muted: '#4a5568'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .kd-bullet {
+      width: 18px;
+      height: 18px;
+      background-color: #00a870;
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .hero-wave {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    /* Custom sleek scrollbar for sticky sidebars */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+  </head>
+<body class="bg-white text-kd-text font-sans antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- ============================================================== -->
+  <!-- 1. NAVBAR (KLIKDOKTER HEADER)                                  -->
+  <!-- ============================================================== -->
+  <header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Left: Logo KlikDokter -->
+      <div class="flex items-center space-x-4 sm:space-x-6">
+        <a href="http://localhost/Latihan%20SVM/diabetes/public" class="flex items-center space-x-2">
+          <!-- Logo Mark (Infinity / Ribbon Heart) -->
+          <div class="w-10 h-10 flex items-center justify-center">
+            <svg viewBox="0 0 100 80" class="w-full h-full">
+              <path d="M35 15 C15 15, 5 35, 5 50 C5 68, 22 75, 38 65 L50 55 L62 65 C78 75, 95 68, 95 50 C95 35, 85 15, 65 15 C52 15, 42 25, 50 40 C58 25, 48 15, 35 15 Z" fill="#00b4d8" opacity="0.95"/>
+              <path d="M50 40 C42 25, 52 15, 65 15 C85 15, 95 35, 95 50 C95 68, 78 75, 62 65 L50 55 Z" fill="#00a870"/>
+              <circle cx="50" cy="38" r="7" fill="#ffffff"/>
+              <path d="M47 38 h6 M50 35 v6" stroke="#00a870" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <!-- Logo Text -->
+          <div class="flex items-baseline space-x-1">
+            <span class="text-2xl sm:text-3xl font-extrabold text-kd-green tracking-tight">uji</span>
+            <span class="text-2xl sm:text-3xl font-extrabold text-[#0085d0] tracking-tight">coba</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Center: Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-gray-700">
+        <a href="http://localhost/Latihan%20SVM/diabetes/public" class="text-kd-green font-bold">Beranda</a>
+        <a href="http://localhost/Latihan%20SVM/diabetes/public/berita-artikel" class="hover:text-kd-green">Berita & Artikel</a>
+        <a href="http://localhost/Latihan%20SVM/diabetes/public/cek-risiko" class="hover:text-kd-green">Cek Risiko</a>
+        <a href="http://localhost/Latihan%20SVM/diabetes/public/hasil" class="hover:text-kd-green flex items-center gap-1">
+          <span>Hasil Skrining</span>
+          <span class="px-1.5 py-0.2 bg-emerald-100 text-emerald-800 text-[10px] font-extrabold rounded-md">AI</span>
+        </a>
+        <a href="http://localhost/Latihan%20SVM/diabetes/public/riwayat" class="hover:text-kd-green">Riwayat</a>
+        <a href="http://localhost/Latihan%20SVM/diabetes/public/streamlit" class="flex items-center space-x-1 px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-bold border border-emerald-200 hover:bg-emerald-100">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Streamlit AI Hub</span>
+        </a>
+      </nav>
+
+      <!-- Right: Action CTA -->
+      <div class="flex items-center space-x-3">
+        <a href="http://localhost/Latihan%20SVM/diabetes/public/cek-risiko" class="px-5 sm:px-6 py-2.5 bg-kd-green hover:bg-kd-greenDark text-white font-bold text-xs sm:text-sm rounded-xl shadow-sm transition-all hover:scale-[1.02]">
+          Cek Risiko Sekarang
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+      <!-- ============================================================== -->
+  <!-- HERO BANNER                                                    -->
+  <!-- ============================================================== -->
+  <section class="relative bg-gradient-to-r from-emerald-950 via-gray-900 to-teal-950 min-h-[460px] sm:min-h-[500px] flex items-center overflow-hidden">
+    
+    <!-- Background Ambient Glow -->
+    <div class="absolute inset-0 z-0 opacity-40">
+      <div class="absolute -top-24 -left-24 w-96 h-96 bg-emerald-500 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-teal-500 rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- Hero Content: 2-Column Grid -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Left: Headline & CTA -->
+        <div class="lg:col-span-7 text-white space-y-4 text-center lg:text-left">
+          
+          <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-white/10 backdrop-blur-md rounded-full text-xs font-semibold text-emerald-300 border border-white/15">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Program Nasional Cegah Diabetes</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight drop-shadow-md">
+            Kebiasaan Sehat Baru, Kualitas Hidup Lebih Baik
+          </h1>
+          
+          <p class="text-gray-300 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
+            Skrining risiko diabetes mandiri dalam 1 menit menggunakan algoritma Machine Learning XGBoost tervalidasi CDC BRFSS.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+            <a 
+              href="http://localhost/Latihan%20SVM/diabetes/public/cek-risiko" 
+              class="inline-flex items-center px-7 py-3.5 bg-kd-green hover:bg-kd-greenDark text-white font-bold text-sm sm:text-base rounded-xl shadow-lg shadow-kd-green/30 transition-all hover:scale-[1.02] space-x-2"
+            >
+              <span>🩺 Cek Risiko Sekarang</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+
+            <a 
+              href="#sectionPilar" 
+              class="inline-flex items-center px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold text-sm sm:text-base rounded-xl backdrop-blur-md border border-white/20 transition-all"
+            >
+              <span>Explore 5 Pilar &darr;</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Kartu Berita & Edukasi Terbaru (Auto-Rotating 3 Berita Bergantian) -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div 
+            class="relative w-full max-w-sm" 
+            id="heroNewsCardContainer"
+            onmouseenter="pauseHeroCarousel()" 
+            onmouseleave="resumeHeroCarousel()"
+          >
+            <!-- Ambient Glow behind Card -->
+            <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500/25 to-teal-500/20 rounded-3xl blur-xl opacity-70 transition-opacity pointer-events-none"></div>
+
+            <!-- Card Body: Menyatu dengan Latar Hero Emerald/Teal -->
+            <div class="relative bg-gradient-to-b from-gray-900/90 via-emerald-950/80 to-gray-900/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-emerald-500/30 shadow-2xl text-white transition-all hover:border-emerald-400/50">
+              
+              <!-- Header: Badge & Carousel Indicators -->
+              <div class="flex items-center justify-between gap-2 mb-2.5">
+                <span class="inline-flex items-center space-x-1.5 px-2.5 py-0.5 bg-emerald-500/20 text-emerald-300 rounded-full text-[10px] font-bold uppercase tracking-wide border border-emerald-400/30">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>Berita Terbaru</span>
+                </span>
+                
+                <!-- 3 Indicator Dots -->
+                <div class="flex items-center space-x-1.5">
+                                      <button 
+                      type="button" 
+                      onclick="goToHeroSlide(0)" 
+                      id="heroDot0" 
+                      class="h-1.5 rounded-full transition-all duration-300 cursor-pointer w-5 bg-emerald-400 shadow-xs"
+                      title="Berita 1"
+                    ></button>
+                                      <button 
+                      type="button" 
+                      onclick="goToHeroSlide(1)" 
+                      id="heroDot1" 
+                      class="h-1.5 rounded-full transition-all duration-300 cursor-pointer w-1.5 bg-white/30 hover:bg-white/60"
+                      title="Berita 2"
+                    ></button>
+                                      <button 
+                      type="button" 
+                      onclick="goToHeroSlide(2)" 
+                      id="heroDot2" 
+                      class="h-1.5 rounded-full transition-all duration-300 cursor-pointer w-1.5 bg-white/30 hover:bg-white/60"
+                      title="Berita 3"
+                    ></button>
+                                  </div>
+              </div>
+
+              <!-- Slider Viewport: overflow-hidden -->
+              <div class="overflow-hidden w-full rounded-xl">
+                <div 
+                  id="heroNewsSliderTrack" 
+                  class="flex transition-transform duration-700 ease-in-out w-full"
+                  style="transform: translateX(0%);"
+                >
+                                      <div class="w-full flex-shrink-0">
+                      <!-- Compact Thumbnail Foto Berita -->
+                      <div class="relative rounded-xl overflow-hidden h-32 sm:h-36 bg-gray-950 mb-3 group shadow-inner border border-white/10">
+                        <a href="http://localhost/Latihan%20SVM/diabetes/public/berita-artikel/tips-berolahraga-dengan-aktivitas-sehari-hari-menjadi-tetap-bugar" class="block w-full h-full">
+                          <img 
+                            src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=1000&amp;auto=format&amp;fit=crop&amp;q=80" 
+                            alt="Tips Berolahraga dengan Aktivitas Sehari-hari Menjadi Tetap Bugar" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 hover:opacity-100"
+                          >
+                          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+                        </a>
+                        
+                        <span class="absolute bottom-2 left-2 px-2 py-0.5 bg-emerald-950/90 backdrop-blur-md text-emerald-300 border border-emerald-400/30 text-[9px] font-bold rounded-md uppercase tracking-wider">
+                          Gaya Hidup
+                        </span>
+
+                        <span class="absolute bottom-2 right-2 text-[10px] text-gray-300/90 bg-black/60 px-2 py-0.5 rounded-md backdrop-blur-sm border border-white/10">
+                          📅 15/01/2021
+                        </span>
+                      </div>
+
+                      <!-- Judul Berita -->
+                      <a href="http://localhost/Latihan%20SVM/diabetes/public/berita-artikel/tips-berolahraga-dengan-aktivitas-sehari-hari-menjadi-tetap-bugar" class="block group">
+                        <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-300 transition-colors leading-snug line-clamp-2">
+                          Tips Berolahraga dengan Aktivitas Sehari-hari Menjadi Tetap Bugar
+                        </h3>
+                      </a>
+
+                      <!-- Keterangan / Deskripsi Berita -->
+                      <p class="text-[11px] text-gray-300/80 mt-1.5 leading-relaxed line-clamp-2">
+                        Manfaatkan tangga kantor dan aktivitas fisik harian untuk menjaga metabolisme tubuh tanpa perlu alat olahraga khusus.
+                      </p>
+
+                      <!-- Tombol Aksi & Navigasi Slide -->
+                      <div class="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between">
+                        <a 
+                          href="http://localhost/Latihan%20SVM/diabetes/public/berita-artikel/tips-berolahraga-dengan-aktivitas-sehari-hari-menjadi-tetap-bugar"
+                          class="inline-flex items-center space-x-1 text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors"
+                        >
+                          <span>Baca Selengkapnya</span>
+                          <span class="text-sm font-bold">&rarr;</span>
+                        </a>
+
+                        <div class="flex items-center space-x-2">
+                          <button 
+                            type="button" 
+                            onclick="prevHeroSlide(event)" 
+                            class="w-6 h-6 rounded-full bg-white/10 hover:bg-emerald-500/40 text-gray-300 hover:text-white flex items-center justify-center text-xs transition-all cursor-pointer"
+                            title="Berita Sebelumnya"
+                          >
+                            &larr;
+                          </button>
+                          <button 
+                            type="button" 
+                            onclick="nextHeroSlide(event)" 
+                            class="w-6 h-6 rounded-full bg-white/10 hover:bg-emerald-500/40 text-gray-300 hover:text-white flex items-center justify-center text-xs transition-all cursor-pointer"
+                            title="Berita Selanjutnya"
+                          >
+                            &rarr;
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                                      <div class="w-full flex-shrink-0">
+                      <!-- Compact Thumbnail Foto Berita -->
+                      <div class="relative rounded-xl overflow-hidden h-32 sm:h-36 bg-gray-950 mb-3 group shadow-inner border border-white/10">
+                        <a href="http://localhost/Latihan%20SVM/diabetes/public/berita-artikel/kaki-diabetes-ciri-ciri-penyakit-gula-pada-kaki" class="block w-full h-full">
+                          <img 
+                            src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1000&amp;auto=format&amp;fit=crop&amp;q=80" 
+                            alt="Kaki Diabetes : Ciri-ciri Penyakit Gula pada Kaki" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 hover:opacity-100"
+                          >
+                          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+                        </a>
+                        
+                        <span class="absolute bottom-2 left-2 px-2 py-0.5 bg-emerald-950/90 backdrop-blur-md text-emerald-300 border border-emerald-400/30 text-[9px] font-bold rounded-md uppercase tracking-wider">
+                          Diabetes
+                        </span>
+
+                        <span class="absolute bottom-2 right-2 text-[10px] text-gray-300/90 bg-black/60 px-2 py-0.5 rounded-md backdrop-blur-sm border border-white/10">
+                          📅 7/11/2024
+                        </span>
+                      </div>
+
+                      <!-- Judul Berita -->
+                      <a href="http://localhost/Latihan%20SVM/diabetes/public/berita-artikel/kaki-diabetes-ciri-ciri-penyakit-gula-pada-kaki" class="block group">
+                        <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-300 transition-colors leading-snug line-clamp-2">
+                          Kaki Diabetes : Ciri-ciri Penyakit Gula pada Kaki
+                        </h3>
+                      </a>
+
+                      <!-- Keterangan / Deskripsi Berita -->
+                      <p class="text-[11px] text-gray-300/80 mt-1.5 leading-relaxed line-clamp-2">
+                        Kenali 7 komplikasi klinis pada saraf dan sirkulasi kaki (ulkus diabetikum) sejak dini guna mencegah risiko amputasi.
+                      </p>
+
+                      <!-- Tombol Aksi & Navigasi Slide -->
+                      <div class="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between">
+                        <a 
+                          href="http://localhost/Latihan%20SVM/diabetes/public/berita-artikel/kaki-diabetes-ciri-ciri-penyakit-gula-pada-kaki"
+                          class="inline-flex items-center space-x-1 text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors"
+                        >
+                          <span>Baca Selengkapnya</span>
+                          <span class="text-sm font-bold">&rarr;</span>
+                        </a>
+
+                        <div class="flex items-center space-x-2">
+                          <button 
+                            type="button" 
+                            onclick="prevHeroSlide(event)" 
+                            class="w-6 h-6 rounded-full bg-white/10 hover:bg-emerald-500/40 text-gray-300 hover:text-white flex items-center justify-center text-xs transition-all cursor-pointer"
+                            title="Berita Sebelumnya"
+                          >
+                            &larr;
+                          </button>
+                          <button 
+                            type="button" 
+                            onclick="nextHeroSlide(event)" 
+                            class="w-6 h-6 rounded-full bg-white/10 hover:bg-emerald-500/40 text-gray-300 hover:text-white flex items-center justify-center text-xs transition-all cursor-pointer"
+                            title="Berita Selanjutnya"
+                          >
+                            &rarr;
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                                      <div class="w-full flex-shrink-0">
+                      <!-- Compact Thumbnail Foto Berita -->
+                      <div class="relative rounded-xl overflow-hidden h-32 sm:h-36 bg-gray-950 mb-3 group shadow-inner border border-white/10">
+                        <a href="http://localhost/Latihan%20SVM/diabetes/public/berita-artikel/4-jenis-aktivitas-yang-cocok-bagi-pengidap-diabetes" class="block w-full h-full">
+                          <img 
+                            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1000&amp;auto=format&amp;fit=crop&amp;q=80" 
+                            alt="4 Jenis Aktivitas yang Cocok bagi Pengidap Diabetes dan Manfaatnya" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 hover:opacity-100"
+                          >
+                          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+                        </a>
+                        
+                        <span class="absolute bottom-2 left-2 px-2 py-0.5 bg-emerald-950/90 backdrop-blur-md text-emerald-300 border border-emerald-400/30 text-[9px] font-bold rounded-md uppercase tracking-wider">
+                          Aktivitas
+                        </span>
+
+                        <span class="absolute bottom-2 right-2 text-[10px] text-gray-300/90 bg-black/60 px-2 py-0.5 rounded-md backdrop-blur-sm border border-white/10">
+                          📅 23/12/2020
+                        </span>
+                      </div>
+
+                      <!-- Judul Berita -->
+                      <a href="http://localhost/Latihan%20SVM/diabetes/public/berita-artikel/4-jenis-aktivitas-yang-cocok-bagi-pengidap-diabetes" class="block group">
+                        <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-300 transition-colors leading-snug line-clamp-2">
+                          4 Jenis Aktivitas yang Cocok bagi Pengidap Diabetes dan Manfaatnya
+                        </h3>
+                      </a>
+
+                      <!-- Keterangan / Deskripsi Berita -->
+                      <p class="text-[11px] text-gray-300/80 mt-1.5 leading-relaxed line-clamp-2">
+                        Latihan aerobik rutin seperti jalan santai, tai chi, menari, dan renang terbukti melancarkan sirkulasi serta menjaga gula darah.
+                      </p>
+
+                      <!-- Tombol Aksi & Navigasi Slide -->
+                      <div class="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between">
+                        <a 
+                          href="http://localhost/Latihan%20SVM/diabetes/public/berita-artikel/4-jenis-aktivitas-yang-cocok-bagi-pengidap-diabetes"
+                          class="inline-flex items-center space-x-1 text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors"
+                        >
+                          <span>Baca Selengkapnya</span>
+                          <span class="text-sm font-bold">&rarr;</span>
+                        </a>
+
+                        <div class="flex items-center space-x-2">
+                          <button 
+                            type="button" 
+                            onclick="prevHeroSlide(event)" 
+                            class="w-6 h-6 rounded-full bg-white/10 hover:bg-emerald-500/40 text-gray-300 hover:text-white flex items-center justify-center text-xs transition-all cursor-pointer"
+                            title="Berita Sebelumnya"
+                          >
+                            &larr;
+                          </button>
+                          <button 
+                            type="button" 
+                            onclick="nextHeroSlide(event)" 
+                            class="w-6 h-6 rounded-full bg-white/10 hover:bg-emerald-500/40 text-gray-300 hover:text-white flex items-center justify-center text-xs transition-all cursor-pointer"
+                            title="Berita Selanjutnya"
+                          >
+                            &rarr;
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                                  </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Curved Wave Separator -->
+    <div class="hero-wave pointer-events-none">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 sm:h-20 text-white preserve-3d">
+        <path d="M0 120L1440 120L1440 40C1100 120 700 10 0 0L0 120Z" fill="currentColor"/>
+      </svg>
+    </div>
+
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- SECTION 1: 4 FAKTOR UTAMA RISIKO (SIMPEL & VISUAL)             -->
+  <!-- ============================================================== -->
+  <section class="py-14 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="text-xs font-bold text-kd-green uppercase tracking-wider">Faktor Risiko Klinis</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
+          4 Pemicu Utama Diabetes Melitus
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-500 mt-1">Kombinasi gaya hidup dan genetik yang paling sering memicu resistensi insulin.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <div class="bg-gray-50/80 hover:bg-emerald-50/40 rounded-2xl p-5 border border-gray-100 hover:border-emerald-200 transition-all hover:shadow-md text-center group">
+          <div class="w-14 h-14 mx-auto mb-3.5 bg-white rounded-2xl shadow-sm flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+            ⚖️
+          </div>
+          <h3 class="font-bold text-gray-900 text-sm mb-1">Berat Badan Berlebih</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">Indeks Massa Tubuh (BMI) &ge; 25 dan penumpukan lemak pada area perut.</p>
+        </div>
+
+        <div class="bg-gray-50/80 hover:bg-emerald-50/40 rounded-2xl p-5 border border-gray-100 hover:border-emerald-200 transition-all hover:shadow-md text-center group">
+          <div class="w-14 h-14 mx-auto mb-3.5 bg-white rounded-2xl shadow-sm flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+            🥤
+          </div>
+          <h3 class="font-bold text-gray-900 text-sm mb-1">Asupan Tinggi Gula</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">Konsumsi rutin minuman manis kemasan, boba, dan karbohidrat olahan.</p>
+        </div>
+
+        <div class="bg-gray-50/80 hover:bg-emerald-50/40 rounded-2xl p-5 border border-gray-100 hover:border-emerald-200 transition-all hover:shadow-md text-center group">
+          <div class="w-14 h-14 mx-auto mb-3.5 bg-white rounded-2xl shadow-sm flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+            🛋️
+          </div>
+          <h3 class="font-bold text-gray-900 text-sm mb-1">Kurang Gerak Fisik</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">Gaya hidup banyak duduk dan olahraga kurang dari 150 menit per minggu.</p>
+        </div>
+
+        <div class="bg-gray-50/80 hover:bg-emerald-50/40 rounded-2xl p-5 border border-gray-100 hover:border-emerald-200 transition-all hover:shadow-md text-center group">
+          <div class="w-14 h-14 mx-auto mb-3.5 bg-white rounded-2xl shadow-sm flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+            🧬
+          </div>
+          <h3 class="font-bold text-gray-900 text-sm mb-1">Riwayat Keluarga</h3>
+          <p class="text-xs text-gray-500 leading-relaxed">Faktor keturunan genetik dari orang tua atau saudara kandung pengidap diabetes.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- SECTION 2: 5 PILAR PENGENDALIAN DIABETES (INTERAKTIF & SIMPEL) -->
+  <!-- ============================================================== -->
+  <section class="py-14 sm:py-18 bg-gray-50/80 border-t border-gray-100" id="sectionPilar">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto mb-8">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 mb-2">
+          Panduan Praktis PERKENI & WHO
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
+          5 Pilar Pengendalian Diabetes
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-500 mt-1">Pilih salah satu pilar untuk mencoba alat interaktif dan panduan ringkasnya.</p>
+      </div>
+
+      <!-- 5 Interactive Selector Cards -->
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
+        
+        <button 
+          type="button" 
+          onclick="activatePillar(1)" 
+          id="pilarNav1"
+          class="pilar-nav-btn active flex flex-col items-center justify-center p-3.5 sm:p-4 rounded-2xl bg-white border-2 border-kd-green shadow-sm transition-all text-center cursor-pointer"
+        >
+          <span class="text-2xl sm:text-3xl mb-1">🥗</span>
+          <span class="text-xs font-bold text-gray-900">1. Pola Makan</span>
+          <span class="text-[10px] text-kd-green font-semibold mt-0.5">Kalkulator Kalori</span>
+        </button>
+
+        <button 
+          type="button" 
+          onclick="activatePillar(2)" 
+          id="pilarNav2"
+          class="pilar-nav-btn flex flex-col items-center justify-center p-3.5 sm:p-4 rounded-2xl bg-white border-2 border-transparent hover:border-gray-200 shadow-sm transition-all text-center cursor-pointer"
+        >
+          <span class="text-2xl sm:text-3xl mb-1">🏃</span>
+          <span class="text-xs font-bold text-gray-900">2. Latihan Jasmani</span>
+          <span class="text-[10px] text-gray-400 font-semibold mt-0.5">Target 150 Mnt</span>
+        </button>
+
+        <button 
+          type="button" 
+          onclick="activatePillar(3)" 
+          id="pilarNav3"
+          class="pilar-nav-btn flex flex-col items-center justify-center p-3.5 sm:p-4 rounded-2xl bg-white border-2 border-transparent hover:border-gray-200 shadow-sm transition-all text-center cursor-pointer"
+        >
+          <span class="text-2xl sm:text-3xl mb-1">💊</span>
+          <span class="text-xs font-bold text-gray-900">3. Terapi Obat</span>
+          <span class="text-[10px] text-gray-400 font-semibold mt-0.5">Jadwal & Aturan</span>
+        </button>
+
+        <button 
+          type="button" 
+          onclick="activatePillar(4)" 
+          id="pilarNav4"
+          class="pilar-nav-btn flex flex-col items-center justify-center p-3.5 sm:p-4 rounded-2xl bg-white border-2 border-transparent hover:border-gray-200 shadow-sm transition-all text-center cursor-pointer"
+        >
+          <span class="text-2xl sm:text-3xl mb-1">🩸</span>
+          <span class="text-xs font-bold text-gray-900">4. Gula Darah</span>
+          <span class="text-[10px] text-gray-400 font-semibold mt-0.5">Cek Angka Tes</span>
+        </button>
+
+        <button 
+          type="button" 
+          onclick="activatePillar(5)" 
+          id="pilarNav5"
+          class="pilar-nav-btn col-span-2 sm:col-span-1 flex flex-col items-center justify-center p-3.5 sm:p-4 rounded-2xl bg-white border-2 border-transparent hover:border-gray-200 shadow-sm transition-all text-center cursor-pointer"
+        >
+          <span class="text-2xl sm:text-3xl mb-1">📚</span>
+          <span class="text-xs font-bold text-gray-900">5. Kuis Cepat</span>
+          <span class="text-[10px] text-gray-400 font-semibold mt-0.5">Mitos vs Fakta</span>
+        </button>
+
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- UNIFIED INTERACTIVE WORKSPACE CARD                           -->
+      <!-- ============================================================ -->
+      <div class="bg-white rounded-3xl p-5 sm:p-8 border border-gray-200 shadow-sm transition-all">
+        
+        <!-- ========================================================== -->
+        <!-- VIEW 1: POLA MAKAN SEHAT                                   -->
+        <!-- ========================================================== -->
+        <div id="viewPillar1" class="pillar-view space-y-6">
+          
+          <!-- Quick 3J Summary Badges -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="flex items-center space-x-3 p-3 bg-emerald-50 rounded-2xl border border-emerald-100">
+              <span class="text-2xl">⏰</span>
+              <div>
+                <strong class="text-xs font-extrabold text-emerald-900 block">Jadwal Teratur</strong>
+                <span class="text-[11px] text-gray-600">3x makan utama & 2x selingan ringan</span>
+              </div>
+            </div>
+            <div class="flex items-center space-x-3 p-3 bg-emerald-50 rounded-2xl border border-emerald-100">
+              <span class="text-2xl">⚖️</span>
+              <div>
+                <strong class="text-xs font-extrabold text-emerald-900 block">Piring Model T</strong>
+                <span class="text-[11px] text-gray-600">½ sayur, ¼ karbohidrat, ¼ lauk sehat</span>
+              </div>
+            </div>
+            <div class="flex items-center space-x-3 p-3 bg-emerald-50 rounded-2xl border border-emerald-100">
+              <span class="text-2xl">🥦</span>
+              <div>
+                <strong class="text-xs font-extrabold text-emerald-900 block">Jenis Karbo Kompleks</strong>
+                <span class="text-[11px] text-gray-600">Pilih IG rendah (oat, beras merah, sayur)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Fast Calorie Estimator -->
+          <div class="bg-gray-50/80 rounded-2xl p-5 border border-gray-200/80">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              
+              <div class="grid grid-cols-3 gap-3 flex-1">
+                <div>
+                  <label class="block text-[11px] font-bold text-gray-500 mb-1">Berat (Kg)</label>
+                  <input type="number" id="quickWeight" value="65" oninput="quickDietCalc()" class="w-full text-xs font-bold bg-white border border-gray-200 rounded-xl p-2.5">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-bold text-gray-500 mb-1">Tinggi (Cm)</label>
+                  <input type="number" id="quickHeight" value="170" oninput="quickDietCalc()" class="w-full text-xs font-bold bg-white border border-gray-200 rounded-xl p-2.5">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-bold text-gray-500 mb-1">Gender</label>
+                  <select id="quickGender" onchange="quickDietCalc()" class="w-full text-xs font-bold bg-white border border-gray-200 rounded-xl p-2.5">
+                    <option value="m">Pria</option>
+                    <option value="f">Wanita</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Output Badge -->
+              <div class="sm:w-56 p-3 bg-white rounded-2xl border border-emerald-200 shadow-sm text-center">
+                <span class="text-[10px] uppercase font-bold text-gray-400 block">Kebutuhan Kalori Harian</span>
+                <span id="quickCalResult" class="text-xl font-black text-kd-green">~2.050 kkal</span>
+                <span class="text-[10px] text-gray-500 block mt-0.5">Batas Gula: <strong>Maks 4 sdm/hari</strong></span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Swap Chips -->
+          <div class="flex flex-wrap items-center gap-2 text-xs pt-1">
+            <span class="text-gray-400 font-bold">Tips Cepat:</span>
+            <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-700">❌ Nasi Pulen &rarr; <strong class="text-emerald-700">✅ Nasi Merah / Jagung</strong></span>
+            <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-700">❌ Minuman Boba &rarr; <strong class="text-emerald-700">✅ Air Mineral</strong></span>
+            <span class="px-3 py-1 bg-gray-100 rounded-full text-gray-700">❌ Gorengan &rarr; <strong class="text-emerald-700">✅ Pepes / Kukus</strong></span>
+          </div>
+
+        </div>
+
+        <!-- ========================================================== -->
+        <!-- VIEW 2: LATIHAN JASMANI                                    -->
+        <!-- ========================================================== -->
+        <div id="viewPillar2" class="pillar-view hidden space-y-6">
+          
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 bg-blue-50/70 rounded-2xl border border-blue-100">
+            <div>
+              <h4 class="font-extrabold text-blue-900 text-sm">Target Mingguan: 150 Menit (3-5 Hari)</h4>
+              <p class="text-xs text-gray-600 mt-0.5">Olahraga rutin meningkatkan sensitivitas insulin otot hingga 48 jam.</p>
+            </div>
+            <div class="text-center sm:text-right">
+              <span id="exDisplayMin" class="text-2xl font-black text-blue-600">0</span>
+              <span class="text-xs font-bold text-gray-500">/ 150 Menit</span>
+            </div>
+          </div>
+
+          <!-- Interactive 1-Tap Weekday Tracker -->
+          <div>
+            <label class="block text-xs font-bold text-gray-700 mb-2">Pilih sesi olahraga Anda minggu ini (Tap untuk centang):</label>
+            <div class="grid grid-cols-5 gap-2 sm:gap-3">
+              <button type="button" onclick="toggleExDay(this, 30)" class="ex-day-btn p-3 rounded-2xl border-2 border-gray-200 bg-gray-50 font-bold text-xs text-gray-700 hover:border-blue-400 transition-all flex flex-col items-center">
+                <span>Senin</span>
+                <span class="text-[10px] text-gray-400 font-normal mt-1">+30 mnt</span>
+              </button>
+              <button type="button" onclick="toggleExDay(this, 30)" class="ex-day-btn p-3 rounded-2xl border-2 border-gray-200 bg-gray-50 font-bold text-xs text-gray-700 hover:border-blue-400 transition-all flex flex-col items-center">
+                <span>Rabu</span>
+                <span class="text-[10px] text-gray-400 font-normal mt-1">+30 mnt</span>
+              </button>
+              <button type="button" onclick="toggleExDay(this, 30)" class="ex-day-btn p-3 rounded-2xl border-2 border-gray-200 bg-gray-50 font-bold text-xs text-gray-700 hover:border-blue-400 transition-all flex flex-col items-center">
+                <span>Jumat</span>
+                <span class="text-[10px] text-gray-400 font-normal mt-1">+30 mnt</span>
+              </button>
+              <button type="button" onclick="toggleExDay(this, 30)" class="ex-day-btn p-3 rounded-2xl border-2 border-gray-200 bg-gray-50 font-bold text-xs text-gray-700 hover:border-blue-400 transition-all flex flex-col items-center">
+                <span>Sabtu</span>
+                <span class="text-[10px] text-gray-400 font-normal mt-1">+30 mnt</span>
+              </button>
+              <button type="button" onclick="toggleExDay(this, 30)" class="ex-day-btn p-3 rounded-2xl border-2 border-gray-200 bg-gray-50 font-bold text-xs text-gray-700 hover:border-blue-400 transition-all flex flex-col items-center">
+                <span>Minggu</span>
+                <span class="text-[10px] text-gray-400 font-normal mt-1">+30 mnt</span>
+              </button>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="mt-4">
+              <div class="w-full bg-gray-100 h-3 rounded-full overflow-hidden">
+                <div id="exBar" class="bg-blue-500 h-full w-0 transition-all duration-300"></div>
+              </div>
+              <span id="exStatusTxt" class="text-xs text-gray-500 font-medium block mt-1.5">Klik salah satu hari untuk mencatat latihan.</span>
+            </div>
+          </div>
+
+          <!-- Quick 3 Rules -->
+          <div class="grid grid-cols-3 gap-2 text-center text-xs">
+            <div class="p-2.5 bg-gray-50 rounded-xl border">👟 Pakai sepatu pas</div>
+            <div class="p-2.5 bg-gray-50 rounded-xl border">🍬 Sediakan permen</div>
+            <div class="p-2.5 bg-gray-50 rounded-xl border">⏱️ Jalan cepat 30 mnt</div>
+          </div>
+
+        </div>
+
+        <!-- ========================================================== -->
+        <!-- VIEW 3: TERAPI FARMAKOLOGI                                 -->
+        <!-- ========================================================== -->
+        <div id="viewPillar3" class="pillar-view hidden space-y-4">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            
+            <div class="p-4 bg-gray-50 rounded-2xl border border-gray-200">
+              <div class="text-xl mb-2">🍽️</div>
+              <h5 class="text-xs font-extrabold text-gray-900">Metformin</h5>
+              <span class="text-[11px] text-kd-green font-bold block mb-1">Saat / Sesudah Makan</span>
+              <p class="text-[11px] text-gray-500 leading-relaxed">Menurunkan produksi gula hati & cegah mual pada lambung.</p>
+            </div>
+
+            <div class="p-4 bg-gray-50 rounded-2xl border border-gray-200">
+              <div class="text-xl mb-2">🌅</div>
+              <h5 class="text-xs font-extrabold text-gray-900">Sulfonilurea</h5>
+              <span class="text-[11px] text-amber-700 font-bold block mb-1">15-30 Mnt Sebelum Makan</span>
+              <p class="text-[11px] text-gray-500 leading-relaxed">Memicu pelepasan insulin alami dari pankreas saat makan.</p>
+            </div>
+
+            <div class="p-4 bg-gray-50 rounded-2xl border border-gray-200">
+              <div class="text-xl mb-2">💉</div>
+              <h5 class="text-xs font-extrabold text-gray-900">Terapi Insulin</h5>
+              <span class="text-[11px] text-blue-700 font-bold block mb-1">Sesuai Jadwal Tetap</span>
+              <p class="text-[11px] text-gray-500 leading-relaxed">Simpan di suhu sejuk (bukan freezer) dan jangan lewatkan dosis.</p>
+            </div>
+
+          </div>
+
+          <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-xs text-amber-900 flex items-center justify-between">
+            <span>⚠️ <strong>Penting:</strong> Jangan menghentikan atau mengubah dosis obat tanpa anjuran dokter.</span>
+            <a href="https://www.klikdokter.com" target="_blank" class="font-bold underline text-xs ml-2">Konsultasi Dokter &rarr;</a>
+          </div>
+
+        </div>
+
+        <!-- ========================================================== -->
+        <!-- VIEW 4: PEMANTAUAN MANDIRI (CEK GULA DARAH)                -->
+        <!-- ========================================================== -->
+        <div id="viewPillar4" class="pillar-view hidden space-y-5">
+          
+          <!-- Blood Sugar Levels Infographic Illustration -->
+          <div class="rounded-2xl overflow-hidden border border-gray-100 bg-white p-3 flex justify-center shadow-sm">
+            <img src="http://localhost/Latihan%20SVM/diabetes/public/assets/blood_sugar_levels.png" alt="Blood Sugar Levels Chart" class="max-h-60 sm:max-h-72 object-contain rounded-xl">
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            
+            <div class="flex-1 w-full space-y-3">
+              <label class="block text-xs font-bold text-gray-700">Pilih Kondisi Tes & Masukkan Angka:</label>
+              
+              <div class="grid grid-cols-3 gap-2">
+                <button type="button" onclick="setGluPreset('gdp')" id="btnGdp" class="glu-type-btn active py-2 text-xs font-bold rounded-xl border-2 border-kd-green bg-emerald-50 text-kd-green">
+                  Puasa (GDP)
+                </button>
+                <button type="button" onclick="setGluPreset('gd2pp')" id="btnGd2pp" class="glu-type-btn py-2 text-xs font-bold rounded-xl border-2 border-gray-200 bg-white text-gray-700">
+                  2 Jam PP
+                </button>
+                <button type="button" onclick="setGluPreset('gds')" id="btnGds" class="glu-type-btn py-2 text-xs font-bold rounded-xl border-2 border-gray-200 bg-white text-gray-700">
+                  Sewaktu (GDS)
+                </button>
+              </div>
+
+              <div class="relative flex items-center">
+                <input 
+                  type="number" 
+                  id="fastGluVal" 
+                  value="110" 
+                  oninput="evalQuickGlu()"
+                  class="w-full text-lg font-black text-gray-800 bg-gray-50 border border-gray-200 rounded-xl py-2.5 px-3 outline-none"
+                >
+                <span class="absolute right-3 text-xs font-bold text-gray-400 pointer-events-none">mg/dL</span>
+              </div>
+            </div>
+
+            <!-- Instant Status Card -->
+            <div id="fastGluCard" class="w-full sm:w-64 p-4 rounded-2xl bg-amber-50 border border-amber-300 text-center transition-all">
+              <span id="fastGluIcon" class="text-3xl block mb-1">⚠️</span>
+              <span id="fastGluStatus" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 inline-block uppercase">
+                Pra-Diabetes
+              </span>
+              <span id="fastGluRange" class="text-[11px] text-gray-600 block mt-2">Rentang 100 - 125 mg/dL. Mulai perbaiki pola makan & olahraga.</span>
+            </div>
+
+          </div>
+
+          <!-- Standard Target Reference -->
+          <div class="grid grid-cols-3 gap-2 text-center text-[11px] text-gray-600 border-t pt-3">
+            <div>🟢 Normal: <strong>&lt; 100 mg/dL</strong></div>
+            <div>🟡 Pra-Diabetes: <strong>100 - 125 mg/dL</strong></div>
+            <div>🔴 Tinggi: <strong>&ge; 126 mg/dL</strong></div>
+          </div>
+
+        </div>
+
+        <!-- ========================================================== -->
+        <!-- VIEW 5: KUIS MITOS VS FAKTA (INTERAKTIF & CEPAT)          -->
+        <!-- ========================================================== -->
+        <div id="viewPillar5" class="pillar-view hidden space-y-4">
+          
+          <div class="flex items-center justify-between text-xs pb-1">
+            <span class="font-bold text-gray-700">Uji Pengetahuan Singkat (Tap Mitos atau Fakta):</span>
+            <span id="kScore" class="font-extrabold text-kd-green">Skor: 0/3</span>
+          </div>
+
+          <!-- Q1 -->
+          <div class="p-3.5 bg-gray-50 rounded-2xl border flex items-center justify-between gap-3" id="qCard1">
+            <span class="text-xs text-gray-800 font-medium">1. "Madu murni bebas dikonsumsi penderita diabetes tanpa batas."</span>
+            <div class="flex items-center space-x-1.5 flex-shrink-0">
+              <button type="button" onclick="kAns(1, 'mitos', true)" class="k-btn-1 px-3 py-1 bg-white border rounded-lg text-xs font-bold hover:bg-gray-100">Mitos</button>
+              <button type="button" onclick="kAns(1, 'fakta', false)" class="k-btn-1 px-3 py-1 bg-white border rounded-lg text-xs font-bold hover:bg-gray-100">Fakta</button>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="p-3.5 bg-gray-50 rounded-2xl border flex items-center justify-between gap-3" id="qCard2">
+            <span class="text-xs text-gray-800 font-medium">2. "Orang bertubuh kurus juga berisiko terkena diabetes tipe 2."</span>
+            <div class="flex items-center space-x-1.5 flex-shrink-0">
+              <button type="button" onclick="kAns(2, 'mitos', false)" class="k-btn-2 px-3 py-1 bg-white border rounded-lg text-xs font-bold hover:bg-gray-100">Mitos</button>
+              <button type="button" onclick="kAns(2, 'fakta', true)" class="k-btn-2 px-3 py-1 bg-white border rounded-lg text-xs font-bold hover:bg-gray-100">Fakta</button>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="p-3.5 bg-gray-50 rounded-2xl border flex items-center justify-between gap-3" id="qCard3">
+            <span class="text-xs text-gray-800 font-medium">3. "Olahraga teratur membantu sel otot menyerap gula darah lebih efektif."</span>
+            <div class="flex items-center space-x-1.5 flex-shrink-0">
+              <button type="button" onclick="kAns(3, 'mitos', false)" class="k-btn-3 px-3 py-1 bg-white border rounded-lg text-xs font-bold hover:bg-gray-100">Mitos</button>
+              <button type="button" onclick="kAns(3, 'fakta', true)" class="k-btn-3 px-3 py-1 bg-white border rounded-lg text-xs font-bold hover:bg-gray-100">Fakta</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- BANNER CTA                                                     -->
+  <!-- ============================================================== -->
+  <section class="py-12 bg-gradient-to-r from-[#00a870] to-[#008f5d] text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+      <div>
+        <h3 class="text-xl sm:text-2xl font-extrabold tracking-tight">Ketahui Tingkat Risiko Anda Sekarang</h3>
+        <p class="text-emerald-100 text-xs sm:text-sm mt-0.5">Hanya butuh 1 menit dengan instrumen tervalidasi CDC & Machine Learning XGBoost.</p>
+      </div>
+      <a href="http://localhost/Latihan%20SVM/diabetes/public/cek-risiko" class="px-7 py-3 bg-white text-kd-green hover:bg-emerald-50 font-extrabold text-sm rounded-xl shadow-lg transition-all whitespace-nowrap">
+        Mulai Kuesioner &rarr;
+      </a>
+    </div>
+  </section>
+  </main>
+
+  <!-- ============================================================== -->
+  <!-- FOOTER                                                         -->
+  <!-- ============================================================== -->
+  <footer class="bg-gray-900 text-gray-400 py-12 text-sm mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-gray-800">
+        
+        <!-- Col 1: Brand -->
+        <div class="space-y-3">
+          <div class="flex items-center space-x-1.5">
+            <span class="text-2xl font-extrabold text-white">uji<span class="text-kd-green ml-1">coba</span></span>
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Platform edukasi dan skrining dini diabetes mandiri berbasis algoritma Machine Learning XGBoost.
+          </p>
+        </div>
+
+        <!-- Col 2: Program & Layanan -->
+        <div>
+          <h4 class="text-white font-bold text-sm mb-3">Menu Skrining</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="http://localhost/Latihan%20SVM/diabetes/public/cek-risiko" class="hover:text-kd-green transition-colors">Kuesioner Cek Risiko</a></li>
+            <li><a href="http://localhost/Latihan%20SVM/diabetes/public/hasil" class="hover:text-kd-green transition-colors">Halaman Hasil Analisis</a></li>
+            <li><a href="http://localhost/Latihan%20SVM/diabetes/public/riwayat" class="hover:text-kd-green transition-colors">Riwayat Skrining</a></li>
+            <li><a href="http://localhost/Latihan%20SVM/diabetes/public/berita-artikel" class="hover:text-kd-green transition-colors">Berita & Artikel Edukasi</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Dashboard AI -->
+        <div>
+          <h4 class="text-white font-bold text-sm mb-3">Dashboard AI</h4>
+          <p class="text-xs text-gray-400 mb-3">Eksplorasi visualisasi data klinis dan performa model prediktif XGBoost.</p>
+          <a href="http://localhost/Latihan%20SVM/diabetes/public/streamlit" class="inline-flex items-center text-xs text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">
+            Buka Streamlit AI Hub &rarr;
+          </a>
+        </div>
+
+      </div>
+
+      <div class="pt-6 text-center text-xs text-gray-500">
+        <p>&copy; 2026 Uji Coba • Sistem Skrining Dini Diabetes Berbasis Machine Learning XGBoost.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+  let activePillarIndex = 1;
+
+  function activatePillar(idx) {
+    activePillarIndex = idx;
+
+    // Toggle Nav Buttons
+    for (let i = 1; i <= 5; i++) {
+      const btn = document.getElementById(`pilarNav${i}`);
+      const view = document.getElementById(`viewPillar${i}`);
+
+      if (btn) {
+        if (i === idx) {
+          btn.className = 'pilar-nav-btn active flex flex-col items-center justify-center p-3.5 sm:p-4 rounded-2xl bg-white border-2 border-kd-green shadow-sm transition-all text-center cursor-pointer';
+          const sub = btn.querySelector('span:nth-child(3)');
+          if (sub) sub.className = 'text-[10px] text-kd-green font-semibold mt-0.5';
+        } else {
+          btn.className = 'pilar-nav-btn flex flex-col items-center justify-center p-3.5 sm:p-4 rounded-2xl bg-white border-2 border-transparent hover:border-gray-200 shadow-sm transition-all text-center cursor-pointer';
+          const sub = btn.querySelector('span:nth-child(3)');
+          if (sub) sub.className = 'text-[10px] text-gray-400 font-semibold mt-0.5';
+        }
+      }
+
+      if (view) {
+        if (i === idx) {
+          view.classList.remove('hidden');
+        } else {
+          view.classList.add('hidden');
+        }
+      }
+    }
+  }
+
+  // Tool 1: Fast Diet Calculator
+  function quickDietCalc() {
+    const w = parseFloat(document.getElementById('quickWeight').value) || 65;
+    const h = parseFloat(document.getElementById('quickHeight').value) || 170;
+    const g = document.getElementById('quickGender').value;
+
+    let bmr = (10 * w) + (6.25 * h) - (5 * 35);
+    bmr += (g === 'm' ? 5 : -161);
+    const tdee = Math.round(bmr * 1.375);
+
+    document.getElementById('quickCalResult').innerText = `~${tdee.toLocaleString('id-ID')} kkal`;
+  }
+
+  // Tool 2: Exercise Tracker
+  let exerciseMinutes = 0;
+  function toggleExDay(btn, mins) {
+    const isChecked = btn.classList.contains('bg-blue-600');
+    if (isChecked) {
+      btn.className = 'ex-day-btn p-3 rounded-2xl border-2 border-gray-200 bg-gray-50 font-bold text-xs text-gray-700 hover:border-blue-400 transition-all flex flex-col items-center';
+      exerciseMinutes = Math.max(0, exerciseMinutes - mins);
+    } else {
+      btn.className = 'ex-day-btn p-3 rounded-2xl border-2 border-blue-600 bg-blue-600 font-bold text-xs text-white shadow-sm transition-all flex flex-col items-center';
+      exerciseMinutes += mins;
+    }
+
+    const percent = Math.min(100, Math.round((exerciseMinutes / 150) * 100));
+    document.getElementById('exDisplayMin').innerText = exerciseMinutes;
+    document.getElementById('exBar').style.width = `${percent}%`;
+
+    const txt = document.getElementById('exStatusTxt');
+    if (percent >= 100) {
+      txt.innerText = '🎉 Target 150 menit minggu ini tercapai sempurna!';
+      txt.className = 'text-xs text-emerald-600 font-bold block mt-1.5';
+    } else {
+      txt.innerText = `Pencapaian: ${percent}% dari target rekomendasi klinis.`;
+      txt.className = 'text-xs text-gray-500 font-medium block mt-1.5';
+    }
+  }
+
+  // Tool 4: Fast Blood Sugar Evaluator
+  let currentGluType = 'gdp';
+
+  function setGluPreset(type) {
+    currentGluType = type;
+    ['btnGdp', 'btnGd2pp', 'btnGds'].forEach(id => {
+      const btn = document.getElementById(id);
+      if (btn) {
+        btn.className = 'glu-type-btn py-2 text-xs font-bold rounded-xl border-2 border-gray-200 bg-white text-gray-700';
+      }
+    });
+
+    if (type === 'gdp') {
+      document.getElementById('btnGdp').className = 'glu-type-btn active py-2 text-xs font-bold rounded-xl border-2 border-kd-green bg-emerald-50 text-kd-green';
+    } else if (type === 'gd2pp') {
+      document.getElementById('btnGd2pp').className = 'glu-type-btn active py-2 text-xs font-bold rounded-xl border-2 border-kd-green bg-emerald-50 text-kd-green';
+    } else {
+      document.getElementById('btnGds').className = 'glu-type-btn active py-2 text-xs font-bold rounded-xl border-2 border-kd-green bg-emerald-50 text-kd-green';
+    }
+
+    evalQuickGlu();
+  }
+
+  function evalQuickGlu() {
+    const val = parseFloat(document.getElementById('fastGluVal').value) || 0;
+    const card = document.getElementById('fastGluCard');
+    const badge = document.getElementById('fastGluStatus');
+    const icon = document.getElementById('fastGluIcon');
+    const range = document.getElementById('fastGluRange');
+
+    let status = 'normal';
+    let label = 'Normal';
+    let desc = '';
+
+    if (currentGluType === 'gdp') {
+      if (val < 100) {
+        status = 'normal';
+        label = 'Normal';
+        desc = 'Kadar puasa ideal (< 100 mg/dL). Tubuh memproses gula dengan sangat baik.';
+      } else if (val <= 125) {
+        status = 'pre';
+        label = 'Pra-Diabetes';
+        desc = 'Rentang 100 - 125 mg/dL. Tingkatkan olahraga & batasi gula.';
+      } else {
+        status = 'high';
+        label = 'Tinggi / Diabetes';
+        desc = 'Hasil ≥ 126 mg/dL tergolong tinggi. Disarankan evaluasi dokter.';
+      }
+    } else {
+      if (val < 140) {
+        status = 'normal';
+        label = 'Normal';
+        desc = 'Gula darah pasca makan normal (< 140 mg/dL).';
+      } else if (val <= 199) {
+        status = 'pre';
+        label = 'Pra-Diabetes';
+        desc = 'Rentang 140 - 199 mg/dL. Waspadai asupan karbohidrat tinggi.';
+      } else {
+        status = 'high';
+        label = 'Tinggi / Diabetes';
+        desc = 'Hasil ≥ 200 mg/dL mengindikasikan beban gula tinggi.';
+      }
+    }
+
+    if (status === 'normal') {
+      icon.innerText = '✅';
+      badge.className = 'px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 inline-block uppercase';
+      card.className = 'w-full sm:w-64 p-4 rounded-2xl bg-emerald-50 border border-emerald-300 text-center transition-all';
+    } else if (status === 'pre') {
+      icon.innerText = '⚠️';
+      badge.className = 'px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 inline-block uppercase';
+      card.className = 'w-full sm:w-64 p-4 rounded-2xl bg-amber-50 border border-amber-300 text-center transition-all';
+    } else {
+      icon.innerText = '🚨';
+      badge.className = 'px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-100 text-rose-800 inline-block uppercase';
+      card.className = 'w-full sm:w-64 p-4 rounded-2xl bg-rose-50 border border-rose-300 text-center transition-all';
+    }
+
+    badge.innerText = label;
+    range.innerText = desc;
+  }
+
+  // Tool 5: Quick Quiz
+  let quizKCount = 0;
+  const answeredK = {};
+
+  function kAns(qNum, choice, isCorrect) {
+    if (answeredK[qNum]) return;
+    answeredK[qNum] = true;
+
+    const card = document.getElementById(`qCard${qNum}`);
+    const btns = document.querySelectorAll(`.k-btn-${qNum}`);
+    btns.forEach(b => b.disabled = true);
+
+    if (isCorrect) {
+      quizKCount++;
+      card.className = 'p-3.5 bg-emerald-50 rounded-2xl border border-emerald-300 flex items-center justify-between gap-3';
+    } else {
+      card.className = 'p-3.5 bg-rose-50 rounded-2xl border border-rose-300 flex items-center justify-between gap-3';
+    }
+
+    document.getElementById('kScore').innerText = `Skor: ${quizKCount}/3`;
+  }
+
+  // ==============================================================
+  // HERO 3-ARTICLES AUTO-SLIDING HORIZONTAL CAROUSEL
+  // ==============================================================
+  let currentHeroIdx = 0;
+  const totalHeroSlides = 3;
+  let heroCarouselTimer = null;
+
+  function updateHeroSlider(targetIdx) {
+    const track = document.getElementById('heroNewsSliderTrack');
+    if (track) {
+      track.style.transform = `translateX(-${targetIdx * 100}%)`;
+    }
+
+    for (let i = 0; i < totalHeroSlides; i++) {
+      const dot = document.getElementById(`heroDot${i}`);
+      if (!dot) continue;
+      if (i === targetIdx) {
+        dot.className = 'h-1.5 rounded-full transition-all duration-300 cursor-pointer w-5 bg-emerald-400 shadow-xs';
+      } else {
+        dot.className = 'h-1.5 rounded-full transition-all duration-300 cursor-pointer w-1.5 bg-white/30 hover:bg-white/60';
+      }
+    }
+    currentHeroIdx = targetIdx;
+  }
+
+  function nextHeroSlide(e) {
+    if (e) e.stopPropagation();
+    if (totalHeroSlides <= 1) return;
+    const next = (currentHeroIdx + 1) % totalHeroSlides;
+    updateHeroSlider(next);
+  }
+
+  function prevHeroSlide(e) {
+    if (e) e.stopPropagation();
+    if (totalHeroSlides <= 1) return;
+    const prev = (currentHeroIdx - 1 + totalHeroSlides) % totalHeroSlides;
+    updateHeroSlider(prev);
+  }
+
+  function goToHeroSlide(idx) {
+    updateHeroSlider(idx);
+    resetHeroTimer();
+  }
+
+  function startHeroTimer() {
+    if (totalHeroSlides <= 1) return;
+    if (heroCarouselTimer) clearInterval(heroCarouselTimer);
+    heroCarouselTimer = setInterval(() => {
+      const next = (currentHeroIdx + 1) % totalHeroSlides;
+      updateHeroSlider(next);
+    }, 3000);
+  }
+
+  function resetHeroTimer() {
+    startHeroTimer();
+  }
+
+  function pauseHeroCarousel() {
+    // Optional gentle pause or keep running
+    if (heroCarouselTimer) clearInterval(heroCarouselTimer);
+  }
+
+  function resumeHeroCarousel() {
+    startHeroTimer();
+  }
+
+  // Auto start immediately
+  startHeroTimer();
+  window.addEventListener('load', startHeroTimer);
+</script>
+</body>
+</html>

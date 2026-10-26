@@ -1,0 +1,19 @@
+{
+  "include": [
+    ".",
+    "pages"
+  ],
+  "extraPaths": [
+    ".",
+    "..",
+    "pages"
+  ],
+  "venvPath": ".",
+  "venv": ".venv",
+  "reportMissingImports": "none",
+  "reportMissingModuleSource": "none",
+  "reportUnusedImport": "none",
+  "reportGeneralTypeIssues": "none",
+  "reportOptionalMemberAccess": "none",
+  "reportOptionalSubscript": "none"
+}

@@ -1,0 +1,99 @@
+{
+    "algorithm": "Extreme Gradient Boosting (XGBoost)",
+    "model_name": "XGBoost",
+    "model_type": "XGBClassifier",
+    "training_date": "2026-10-18 23:02:11",
+    "training_duration_seconds": 0.68,
+    "model_version": "1.0.0",
+    "status": "Aktif & Tervalidasi",
+    "features": [
+        "HighBP",
+        "HighChol",
+        "CholCheck",
+        "BMI",
+        "Smoker",
+        "Stroke",
+        "HeartDiseaseorAttack",
+        "PhysActivity",
+        "Fruits",
+        "Veggies",
+        "HvyAlcoholConsump",
+        "AnyHealthcare",
+        "NoDocbcCost",
+        "GenHlth",
+        "MentHlth",
+        "PhysHlth",
+        "DiffWalk",
+        "Sex",
+        "Age",
+        "Education",
+        "Income"
+    ],
+    "target": "Diabetes_binary",
+    "class_mapping": {
+        "0": "Risiko Rendah (Non-Diabetes)",
+        "1": "Berisiko Tinggi (Diabetes/Pre-Diabetes)"
+    },
+    "dataset_info": {
+        "file": "diabetes_health_indicators.csv",
+        "total_samples": 253680,
+        "train_samples": 202944,
+        "test_samples": 50736,
+        "class_distribution_total": {
+            "0": 218334,
+            "1": 35346
+        },
+        "class_distribution_train": {
+            "0": 174667,
+            "1": 28277
+        },
+        "class_distribution_test": {
+            "0": 43667,
+            "1": 7069
+        }
+    },
+    "metrics": {
+        "accuracy": 0.7192,
+        "precision_class_0": 0.9547,
+        "precision_class_1": 0.3048,
+        "recall_class_0": 0.7074,
+        "recall_class_1": 0.7925,
+        "f1_class_0": 0.8126,
+        "f1_class_1": 0.4403,
+        "macro_f1": 0.6264,
+        "weighted_f1": 0.7607,
+        "confusion_matrix": [
+            [
+                30889,
+                12778
+            ],
+            [
+                1467,
+                5602
+            ]
+        ]
+    },
+    "feature_weights": {
+        "HighBP": 0.6811878681182861,
+        "HighChol": 0.05423258990049362,
+        "CholCheck": 0.014413147233426571,
+        "BMI": 0.025879954919219017,
+        "Smoker": 0.0022691315971314907,
+        "Stroke": 0.003656615037471056,
+        "HeartDiseaseorAttack": 0.02729656919836998,
+        "PhysActivity": 0.0022555110044777393,
+        "Fruits": 0.002266020281240344,
+        "Veggies": 0.0014238524017855525,
+        "HvyAlcoholConsump": 0.015660632401704788,
+        "AnyHealthcare": 0.0016314730746671557,
+        "NoDocbcCost": 0.001707162125967443,
+        "GenHlth": 0.08403739333152771,
+        "MentHlth": 0.0030142038594931364,
+        "PhysHlth": 0.002476985566318035,
+        "DiffWalk": 0.027778804302215576,
+        "Sex": 0.009074315428733826,
+        "Age": 0.025302080437541008,
+        "Education": 0.0025036069564521313,
+        "Income": 0.011932197958230972
+    }
+}
